@@ -1,0 +1,579 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.level-app {
+  min-height: 100vh;
+  padding: 18px;
+  background:
+    radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--secondary) 22%, transparent), transparent 28%),
+    linear-gradient(135deg, color-mix(in srgb, var(--paper) 82%, white), color-mix(in srgb, var(--primary) 10%, var(--paper)));
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+.navbar {
+  position: sticky;
+  top: 14px;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 14px;
+  align-items: center;
+  width: min(1180px, 100%);
+  margin: 0 auto 24px;
+  padding: 10px;
+  border: 1px solid color-mix(in srgb, var(--primary) 16%, transparent);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  box-shadow: 0 20px 50px color-mix(in srgb, var(--primary) 16%, transparent);
+  backdrop-filter: blur(18px);
+}
+
+.brand,
+.wallet-pill,
+.menu-toggle,
+.nav-links button,
+.primary-action,
+.ghost-action,
+.wallet-option {
+  border: 0;
+  border-radius: 8px;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.brand:hover,
+.wallet-pill:hover,
+.nav-links button:hover,
+.primary-action:hover,
+.ghost-action:hover,
+.wallet-option:hover {
+  transform: translateY(-2px);
+}
+
+.brand {
+  display: grid;
+  gap: 2px;
+  padding: 10px 14px;
+  background: var(--primary);
+  color: white;
+  text-align: left;
+}
+
+.brand span {
+  font-weight: 900;
+}
+
+.brand small {
+  color: color-mix(in srgb, white 72%, var(--accent));
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.nav-links button {
+  padding: 10px 12px;
+  background: transparent;
+  color: var(--ink);
+}
+
+.nav-links button.active {
+  background: color-mix(in srgb, var(--secondary) 18%, white);
+  color: var(--primary);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--secondary) 42%, transparent);
+}
+
+.wallet-pill,
+.primary-action {
+  padding: 11px 16px;
+  background: linear-gradient(135deg, var(--secondary), var(--accent));
+  color: color-mix(in srgb, var(--ink) 88%, black);
+  font-weight: 800;
+  box-shadow: 0 14px 30px color-mix(in srgb, var(--secondary) 24%, transparent);
+}
+
+.menu-toggle {
+  display: none;
+  padding: 10px 12px;
+  background: color-mix(in srgb, var(--primary) 10%, white);
+  color: var(--primary);
+}
+
+.hero-panel,
+.page-surface {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.hero-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+  gap: 22px;
+  align-items: stretch;
+  padding: 30px 0 22px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--secondary);
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: anywhere;
+}
+
+h1 {
+  max-width: 760px;
+  margin: 0;
+  color: var(--primary);
+  font-size: clamp(2.2rem, 6vw, 5.6rem);
+  line-height: 0.96;
+}
+
+h2 {
+  margin: 0 0 12px;
+  color: var(--primary);
+  font-size: clamp(1.55rem, 3vw, 2.6rem);
+  line-height: 1.05;
+}
+
+h3 {
+  margin: 0 0 8px;
+  color: var(--primary);
+  font-size: 1.45rem;
+}
+
+.hero-copy {
+  max-width: 720px;
+  margin: 18px 0 0;
+  color: color-mix(in srgb, var(--ink) 76%, white);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.hero-card,
+.feature-block,
+.status-block,
+.stat-card,
+.input-card,
+.checklist,
+.timeline {
+  border: 1px solid color-mix(in srgb, var(--primary) 14%, transparent);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--surface) 91%, transparent);
+  box-shadow: 0 18px 45px color-mix(in srgb, var(--primary) 13%, transparent);
+}
+
+.hero-card {
+  display: grid;
+  align-content: end;
+  gap: 10px;
+  min-height: 220px;
+  padding: 24px;
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--primary) 92%, black), color-mix(in srgb, var(--secondary) 72%, var(--primary))),
+    var(--primary);
+  color: white;
+}
+
+.hero-card span,
+.hero-card small {
+  color: color-mix(in srgb, white 72%, var(--accent));
+}
+
+.hero-card strong {
+  font-size: clamp(1.6rem, 4vw, 3.2rem);
+  line-height: 1;
+}
+
+.page-surface {
+  padding-bottom: 44px;
+}
+
+.content-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.overview-grid {
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+}
+
+.wallet-grid,
+.activity-grid,
+.contract-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.send-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.feature-block,
+.status-block,
+.stat-card,
+.input-card {
+  padding: 22px;
+}
+
+.feature-block p,
+.status-block p,
+.stat-card span,
+.check-item p,
+.timeline p {
+  color: color-mix(in srgb, var(--ink) 72%, white);
+  line-height: 1.6;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.ghost-action {
+  padding: 10px 14px;
+  background: color-mix(in srgb, var(--primary) 8%, white);
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.checklist {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+}
+
+.check-item {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--paper) 72%, white);
+}
+
+.check-item span,
+.timeline span {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.balance-block h2 {
+  font-variant-numeric: tabular-nums;
+}
+
+.input-card {
+  display: grid;
+  gap: 10px;
+  color: var(--primary);
+  font-weight: 900;
+}
+
+.input-card input {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid color-mix(in srgb, var(--primary) 18%, transparent);
+  border-radius: 8px;
+  padding: 13px 14px;
+  background: color-mix(in srgb, var(--paper) 58%, white);
+  color: var(--ink);
+}
+
+.wide,
+.wide-block,
+.send-button {
+  grid-column: 1 / -1;
+}
+
+.send-button {
+  justify-self: start;
+}
+
+.hash-link {
+  display: inline-block;
+  max-width: 100%;
+  margin-top: 14px;
+  color: var(--primary);
+  font-weight: 900;
+  overflow-wrap: anywhere;
+}
+
+.timeline {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+}
+
+.timeline div {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 12px;
+  align-items: center;
+  opacity: 0.58;
+}
+
+.timeline div.done {
+  opacity: 1;
+}
+
+.stat-card {
+  display: grid;
+  gap: 8px;
+}
+
+.stat-card p {
+  margin: 0;
+  color: var(--secondary);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.stat-card strong {
+  color: var(--primary);
+  font-size: 1.7rem;
+}
+
+.wallet-option {
+  display: grid;
+  gap: 8px;
+  min-height: 132px;
+  padding: 20px;
+  background: color-mix(in srgb, var(--surface) 88%, var(--paper));
+  color: var(--ink);
+  text-align: left;
+  border: 1px solid color-mix(in srgb, var(--primary) 12%, transparent);
+}
+
+.wallet-option.selected {
+  background: color-mix(in srgb, var(--secondary) 16%, white);
+  box-shadow: inset 0 0 0 2px var(--secondary);
+}
+
+.wallet-option strong {
+  color: var(--primary);
+  font-size: 1.35rem;
+}
+
+.error-line {
+  color: color-mix(in srgb, #b00020 76%, var(--primary));
+  font-weight: 800;
+}
+
+.layout-side .hero-panel {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.layout-console {
+  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+}
+
+.layout-console .navbar,
+.layout-console .hero-card,
+.layout-console .feature-block,
+.layout-console .status-block,
+.layout-console .stat-card,
+.layout-console .input-card,
+.layout-console .checklist,
+.layout-console .timeline {
+  border-style: dashed;
+}
+
+.layout-ribbon .navbar {
+  border-left: 8px solid var(--accent);
+}
+
+.layout-map .hero-card,
+.layout-travel .hero-card {
+  clip-path: polygon(0 0, 100% 8%, 96% 100%, 0 92%);
+}
+
+.layout-terminal {
+  color-scheme: dark;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 92%, black), color-mix(in srgb, var(--secondary) 22%, black));
+}
+
+.layout-terminal .hero-copy,
+.layout-terminal .feature-block p,
+.layout-terminal .status-block p,
+.layout-terminal .timeline p {
+  color: color-mix(in srgb, white 74%, var(--accent));
+}
+
+.layout-terminal h1,
+.layout-terminal h2,
+.layout-terminal h3 {
+  color: color-mix(in srgb, white 88%, var(--accent));
+}
+
+.layout-playful .brand,
+.layout-gift .brand,
+.layout-playful .wallet-pill,
+.layout-gift .wallet-pill {
+  border-radius: 999px;
+}
+
+.layout-board .page-surface {
+  border-top: 6px solid var(--primary);
+  padding-top: 18px;
+}
+
+.layout-ledger .content-grid {
+  align-items: start;
+}
+
+.layout-notebook .feature-block,
+.layout-notebook .input-card,
+.layout-notebook .timeline {
+  background-image: linear-gradient(color-mix(in srgb, var(--secondary) 12%, transparent) 1px, transparent 1px);
+  background-size: 100% 32px;
+}
+
+.layout-eco .hero-card,
+.layout-yield .hero-card {
+  border-radius: 8px 40px 8px 40px;
+}
+
+.layout-meter .stat-card,
+.layout-credit .stat-card {
+  border-top: 7px solid var(--accent);
+}
+
+@media (min-width: 900px) {
+  .rail.level-app,
+  .stack.level-app,
+  .lockbar.level-app,
+  .workspace.level-app {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    column-gap: 24px;
+    align-items: start;
+  }
+
+  .rail .navbar,
+  .stack .navbar,
+  .lockbar .navbar,
+  .workspace .navbar {
+    position: sticky;
+    top: 18px;
+    grid-row: span 3;
+    grid-template-columns: 1fr;
+    align-content: start;
+    min-height: calc(100vh - 36px);
+    margin: 0;
+  }
+
+  .rail .nav-links,
+  .stack .nav-links,
+  .lockbar .nav-links,
+  .workspace .nav-links {
+    display: grid;
+    justify-content: stretch;
+  }
+
+  .rail .hero-panel,
+  .rail .page-surface,
+  .stack .hero-panel,
+  .stack .page-surface,
+  .lockbar .hero-panel,
+  .lockbar .page-surface,
+  .workspace .hero-panel,
+  .workspace .page-surface {
+    width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .level-app {
+    padding: 10px;
+  }
+
+  .navbar {
+    grid-template-columns: 1fr auto;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    justify-content: center;
+  }
+
+  .nav-links {
+    display: none;
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr;
+    justify-content: stretch;
+  }
+
+  .nav-links.open {
+    display: grid;
+  }
+
+  .wallet-pill {
+    grid-column: 1 / -1;
+  }
+
+  .hero-panel,
+  .overview-grid,
+  .wallet-grid,
+  .activity-grid,
+  .contract-grid,
+  .send-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-panel {
+    padding-top: 12px;
+  }
+
+  .hero-card {
+    min-height: 170px;
+  }
+
+  .wide,
+  .wide-block,
+  .send-button {
+    grid-column: auto;
+  }
+
+  .button-row {
+    display: grid;
+  }
+}
