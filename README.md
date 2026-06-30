@@ -82,8 +82,9 @@ graph TD
    ```
 
 ### ⚙️ Verification Details
-- **Deployed Contract Address:** `CC3RYIELDANCHOR...`
-- **Transaction Hash (Stellar Explorer):** `a78ef68dbd982b618991c0b39e6a0d2f1be7399a9b6c161cd5d7f12e88a38a7c`
+Soroban contract ID - CC2UJP6YAUW5WXAYOM2227FUYHPY5S2IXMSMC65SVLF6ZHOAVFKVBTDH
+
+Transaction Hash: fe5f7f7cbfccddfcafb7cb97835ab1202e2e7fff836c4300fca27523512de66a
 
 ### 📸 Submission Screenshots
 
